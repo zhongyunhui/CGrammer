@@ -12,12 +12,28 @@ public:
 		cout<<"Destructor process: "<<mId<<endl;
 	}
 };
+std::unique_ptr<Task> RTesk(){
+	std::unique_ptr<Task>transTest(new Task(32));
+	transTest.get();
+	return transTest;
+}
+
+void ParameterTest(Task *mTask){
+	cout<<"parameterTest"<<mTask->mId<<std::endl;
+	mTask->mId=33;
+}
+
 void uniqueptrTest(){
+	std::unique_ptr<Task>receiver(RTesk());
+	std::cout<<"method Trans  "<<receiver->mId<<std::endl;
+	ParameterTest(receiver.get());
+	cout<<"after Trans"<<receiver->mId<<std::endl;
 	unique_ptr<Task> taskptr(new Task(23));
 	unique_ptr<Task> staskptr;//=new Task(32)不可以
 	staskptr=make_unique<Task>(32);//使用make_unique创建unique_ptr对象
 	Task *mTask=staskptr.get();//可通过.get()获得管理对象的指针。
 	cout<<mTask->mId<<endl;
+	staskptr.reset(mTask);
 	staskptr.reset(new Task(11));//释放关联的原始指针，将unique_ptr置为空
 	cout<<mTask->mId<<endl;//打印0值，该块内存区域已经备置为空。
 	cout<<"reset test:"<<staskptr->mId<<endl;
@@ -104,9 +120,9 @@ void specifiedDeleter(){
 }
 
 int main(){
-	//uniqueptrTest();
+	uniqueptrTest();
 	//sharedptrTest();
 	//make_pointer();
-	specifiedDeleter();
+	//specifiedDeleter();
 	return 0;
 }
