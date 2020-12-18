@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/hello_shared.dir/src/main.cpp.o  -o hello_shared -Wl,-rpath,/home/godinsec/Study/CGrammer/CmakeStudy/01project/D/build liblibshared.so 

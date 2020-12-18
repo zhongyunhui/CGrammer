@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../sublibrary1/include/sublib1/sublib1.h
+
+../sublibrary2/include/sublib2/sublib2.h
+iostream
+-
+
+/home/godinsec/Study/CGrammer/CmakeStudy/02sub/subbinary/main.cpp
+sublib1/sublib1.h
+/home/godinsec/Study/CGrammer/CmakeStudy/02sub/subbinary/sublib1/sublib1.h
+sublib2/sublib2.h
+/home/godinsec/Study/CGrammer/CmakeStudy/02sub/subbinary/sublib2/sublib2.h
+

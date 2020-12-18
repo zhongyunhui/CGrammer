@@ -1,0 +1,4 @@
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/C/build/CMakeFiles/rebuild_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/C/build/CMakeFiles/edit_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/C/build/CMakeFiles/hello_three.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/C/build/CMakeFiles/hello_library.dir

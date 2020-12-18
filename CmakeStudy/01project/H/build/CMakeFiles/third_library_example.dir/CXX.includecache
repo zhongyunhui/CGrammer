@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/H/main.cpp
+iostream
+-
+boost/shared_ptr.hpp
+-
+boost/filesystem.hpp
+-
+

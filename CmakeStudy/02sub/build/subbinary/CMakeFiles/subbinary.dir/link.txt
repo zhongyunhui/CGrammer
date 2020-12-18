@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/subbinary.dir/main.cpp.o  -o subbinary -Wl,-rpath,/home/godinsec/Study/CGrammer/CmakeStudy/02sub/build/sublibrary1 ../sublibrary1/libSubLibrary1.so 

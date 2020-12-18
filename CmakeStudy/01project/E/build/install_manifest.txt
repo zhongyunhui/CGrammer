@@ -1,0 +1,3 @@
+/usr/local/lib/liblibhello.so
+/usr/local/bin/Hello_install
+/usr/local/include/include/installing/Hello.h

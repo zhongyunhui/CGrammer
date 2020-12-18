@@ -1,0 +1,4 @@
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/D/build/CMakeFiles/rebuild_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/D/build/CMakeFiles/libshared.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/D/build/CMakeFiles/edit_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/D/build/CMakeFiles/hello_shared.dir

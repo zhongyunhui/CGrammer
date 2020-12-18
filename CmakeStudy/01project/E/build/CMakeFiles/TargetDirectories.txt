@@ -1,0 +1,8 @@
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/install/strip.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/install/local.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/libhello.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/edit_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/Hello_install.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/rebuild_cache.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/install.dir
+/home/godinsec/Study/CGrammer/CmakeStudy/01project/E/build/CMakeFiles/list_install_components.dir

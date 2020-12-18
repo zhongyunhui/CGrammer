@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+project(compile_flag)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEX2" CACHE STRING "Set C++ compile Flag" FORCE)
+add_executable(example_compile_flag main.cpp)
+#target_compile_definitions(example_compile_flag PRIVATE EX3)
