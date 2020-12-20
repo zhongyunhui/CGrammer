@@ -107,12 +107,22 @@ void ConstMutex(){
 	mPoint.mutexTest();
 }
 #define hThread(i) hThread##i
+
+class Base{
+public:
+	virtual ~Base()=default;//仅当基类的虚构函数是虚函数，派生类中的才是虚函数 
+	Base(Base &&)=default;
+	Base& operator=(Base &&)=default;
+	Base(const Base&)=default;
+	Base &operator=(Base &&)=default;
+};
+
 int main(){
 	in.open("com.txt",ios::trunc); //ios::trunc表示在打开文件前将文件清空,由于是写入,文件不存在则创建
 	for(int i=0;i<10;i++){
 		//cout<<"thread NO:"<<i<<endl;
 		HANDLE hThread(i) = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)ConstMutex, NULL, 0, NULL);
-		CloseHandle(hThread(i));
+		//CloseHandle(hThread(i));
 	}
     in.close();
 	
