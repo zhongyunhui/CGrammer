@@ -30,21 +30,25 @@ public:
 	static void Derive_static(){
 		cout<<"this is Derived Static"<<endl;
 	}
-	void Base_show1()const override{
-		cout<<"this is virtual Derived show "<<endl;
-	}
-	void Orientation()& {
-		cout<<"this is a left value"<<endl;
-	}
-	void Orientation()&& {
-		cout<<"this is a right value"<<endl;
-	}
+//	void Base_show1()const override{
+//		cout<<"this is virtual Derived show "<<endl;
+//	}
+//	void Orientation()& {
+//		cout<<"this is a left value"<<endl;
+//	}
+//	void Orientation()&& {
+//		cout<<"this is a right value"<<endl;
+//	}
 };
 
 int main(){
 	cout<<"Hello World!"<<endl;
-	Base *mderived=new Derived();
-	//mderived->Base_show1();
-	mderived->Orientation();
+	int len=100; 
+	for(int i=0;i<len;i++){
+		cout<<i<<" ";
+	} 
+//	Base *mderived=new Derived();
+//	//mderived->Base_show1();
+//	mderived->Orientation();
 	return 0;
 }
