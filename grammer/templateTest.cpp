@@ -5,6 +5,7 @@
 #include<memory>
 #include <type_traits>
 #include<vector>
+#include <bits/stdc++.h>
 
 template <typename T,typename R>
 R TSwap(T &a,T &b){
@@ -85,8 +86,21 @@ void remove_add_test(){
 	Tint tempi=0;
 	printf("remove_const %d\n",tempi);
 }
-
-
+// ...test
+//定义了
+template<typename... Tail>class Tuple;
+template<> class Tuple<> {};
+//模板类
+template <typename Value, typename ... Tail>
+class Tuple<Value,Tail ...>: Tuple<Tail ...>{
+	Value val;
+public:
+	Tuple(){}
+	Tuple(Value value, Tail ...tail):val(value),Tuple<Tail ...>(tail ...){}//又初始化了一个类
+	//两个函数
+	Value getvalue(){return val;}
+	Tuple<Tail ...> next() {return *this;}	
+};
 int main(){
 	int a=2;
 	int b=3;
