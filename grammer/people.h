@@ -1,16 +1,22 @@
 #include <stddef.h>
 #include <malloc.h>
 
+class friendTool;
+
 class People{
 	private:
+		friend class friendTool;
 		int age{0};
-	friend int askAge(People person);
+		friend int askAge(People person);
 	public:
 		int getage(){
 			return age;
 		}
 		People()=default;
-		People(int a):age(a){}
+		explicit People(int a):age(a){}
+		operator int(){
+			return age;
+		}
 };
 //只能生成堆对象 在private中重载new运算符
 class PeopleNo{
