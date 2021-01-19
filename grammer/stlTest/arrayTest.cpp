@@ -17,8 +17,14 @@ void ArrayTest(){
 	}
 }
 
+int add(int x, int y){
+	return x+y;
+}
+
+
+
 int main(){
-	ArrayTest();
+	//ArrayTest();
 	return 0;
 }
 

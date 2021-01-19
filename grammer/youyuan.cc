@@ -21,5 +21,6 @@ int main(){
 	std::cout<<"friend class test: "<<friendTool::getPeopleage(person)<<std::endl;
 	People nperson(5);//构造函数隐式转换,加上explicit可以关闭隐式转换
 	int ageTran=nperson;
-	std::cout<<"nperson askAge: "<<ageTran<<std::endl;
+	//std::cout<<"nperson askAge: "<<ageTran<<std::endl;
+	std::cout<<nperson;
 }
