@@ -19,7 +19,17 @@ class People{
 			age=aa;
 		}
 		People()=default;
-		explicit People(int a):age(a){}
+		//explicit用于关闭隐式类型转换
+		explicit People(int a):age(a){
+			std::cout<<"construct by age"<<std::endl;
+		}
+		People& operator=(const People& pp){
+			if(this!=&pp){
+				this->age=pp.age;
+			}
+			std::cout<<"复制赋值运算符"<<std::endl;
+			return *this;
+		}
 		operator int(){
 			return age;
 		}

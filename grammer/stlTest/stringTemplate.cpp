@@ -60,6 +60,21 @@ public:
 	CharProxy operator[] (int idx){
 		return CharProxy(*this,idx);
 	}
+public:
+	//移动构造函数
+	String(String &&rhs){
+		_pstr=rhs._pstr;
+		rhs._pstr=nullptr;
+	}
+	//移动复制赋值运算符
+	String& operator=(String &&rhs){
+		if(this!=&rhs){
+			delete[] _pstr;
+			_pstr=rhs._pstr;
+			rhs._pstr=nullptr;
+		}
+		return *this;
+	}
 };
 //重载<<符号
 std::ostream & operator <<(std::ostream &os, const String & rhs){
