@@ -80,6 +80,14 @@ void sharedptrTest(){
 	cout<<"size of unique_ptr"<<sizeof(sizeUnique)<<endl;
 }
 
+void DeleterTest(){
+	auto del=[](Task* t){
+		cout<<t->mId<<endl;
+		delete t;
+	};
+	unique_ptr<Task,decltype(del)>pLam(new Task(5),del);//=make_unique<Task>(5);
+}
+
 void make_pointer(){
 	shared_ptr<Task> sp,tp;
 	tp=make_shared<Task>(3);	
@@ -120,7 +128,8 @@ void specifiedDeleter(){
 }
 
 int main(){
-	uniqueptrTest();
+	DeleterTest();
+	//uniqueptrTest();
 	//sharedptrTest();
 	//make_pointer();
 	//specifiedDeleter();
