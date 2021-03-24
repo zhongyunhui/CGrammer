@@ -10,7 +10,7 @@ void HeapSort<T,U>::sort(){
 	for(int i=sz/2-1;i>=0;i--){
 		heapAdjust(i,sz);
 	}
-	for(;sz>=0;sz--){
+	for(--sz;sz>=0;sz--){
 		swap(_data[sz],_data[0]);
 		heapAdjust(0,sz);
 	}
