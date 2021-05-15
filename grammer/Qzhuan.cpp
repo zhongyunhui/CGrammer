@@ -11,6 +11,11 @@ class A{
 		}
 };
 
+class C:public A{
+	public:
+		int c;
+		C(int x, int y, int z):A(x,y), c(z){}
+};
 class B{
 	public:
 		int a,b;
@@ -18,7 +23,9 @@ class B{
 
 int main(){
 	A* a=new A(1,2);
-	a=reinterpret_cast<B*>(a);
-	a=reinterpret_cast<A*>(a);
+//	a=reinterpret_cast<B*>(a);
+	a=new C(1,2,3);
 	a->Test();
+	C *c=nullptr;
+	//	c=(A*) new A(1,2);//无法讲基类强转为派生类
 }
