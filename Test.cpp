@@ -23,7 +23,23 @@ vector<TestA*>& TestMap<TestA>(){
 }
 #include <queue>
 #include <algorithm>
+#include <malloc.h>
+void getPos(int ** p){
+	*p=(int*)malloc(sizeof(int));
+	**p=22;
+}
+
 int main(){
+	int *p1=nullptr;
+	getPos(&p1);
+	cout<<*p1<<endl;
+	int a=0x1234;
+	char *p=(char*)&a;
+	cout<<(int)*p<<endl;
+	cout<<(int)*(++p)<<endl;
+
+
+	return 0;
 	vector<string> arr={"1","22","333","444","21","5"};
 	auto cmp=[](string s1, string s2){
 		return s1.size()>s2.size();//优先队列按照升序；

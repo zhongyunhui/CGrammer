@@ -1,4 +1,7 @@
 #include "point.h"
+#include <memory>
+#include <thread>
+
 using namespace std;
 
 class line{
@@ -19,8 +22,46 @@ public:
 	}
 };
 
+class Fruit{
+public:
+	virtual void show(){
+		cout<<"this is Fruit"<<endl;
+	}
+};
+
+class Apple:public Fruit{
+public:
+	void show(){
+		cout<<"this is Apple"<<endl;
+	}
+};
+
+void showTest(Fruit &f){
+	f.show();
+}
+#include <unistd.h>
 int main(){
-	point * p1=new point(1,2);
+	Fruit *f=new Apple();
+	//showTest(*f);
+	auto lamb=[&](Fruit * f){
+		cout<<"delete fruit"<<endl;
+		cout<<this_thread::get_id()<<endl;
+		delete f;
+	};
+	shared_ptr<Fruit> sp(new Apple,lamb);
+	sp->show();
+	thread * t1=new thread(
+		[=](){
+		cout<<"this is subThread id"<<this_thread::get_id()<<endl;
+		sp->show();
+		//sp.reset(new Fruit, lamb);
+		cout<<"use cont "<<sp.use_count()<<endl;
+		});
+	t1->detach();
+	sleep(3);
+	cout<<"main thread id"<<this_thread::get_id()<<endl;
+	//t1->join();
+	/*point * p1=new point(1,2);
 	point3D * p2=new point3D(1,2,3);
 	//line mline=line(p1,p2,3);
 	//cout<<"k=: "<<mline.kvalue()<<endl;
@@ -30,7 +71,7 @@ int main(){
 	p1=p2;
 	p1->disp();
 	point p3(*p2);
-	p3.disp();
+	p3.disp();*/
 }
 
 
