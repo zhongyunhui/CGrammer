@@ -1,8 +1,12 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
+string getStr(int x) {
+    return to_string(x);
+}
+
 int main(){
-	int &&a=10;
-	int b=1;
-	int &c=b;
+    const string& s = getStr(111);
+    
 }
