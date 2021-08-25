@@ -28,8 +28,24 @@ public:
 	}
 };
 
+void testStaticAndRef() {
+	static int a = 20;
+	int & b = a;
+	a+=10;
+	printf("%d\n", b);
+}
+
+struct NodeTest {
+	int a;
+	char jd[0]; //0ȷʵ�ǿյ� 
+}; 
+
+
 int main()
 {
+	NodeTest t;
+	printf("%d\n",sizeof(t));
+	testStaticAndRef();
 //	Example e;	//错误, Example的构造函数是private类型, 不能访问
 //	Example *pe = new Example();
 //错误, Example的构造函数是private类型, 不能new

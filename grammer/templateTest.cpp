@@ -101,7 +101,12 @@ public:
 	Value getvalue(){return val;}
 	Tuple<Tail ...> next() {return *this;}	
 };
+
+template<typename T> zhuanFunc(T a, int b) {
+	std::cout<<a + b<<std::endl;
+}
 int main(){
+	zhuanFunc('1', 1.2);
 	int a=2;
 	int b=3;
 	int x=a&b;
