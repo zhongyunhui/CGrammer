@@ -26,7 +26,7 @@ class Stock:public Investment{
 		}       
 };
 //lambda
-auto delInvmt=[](Investment* pInvest){
+auto delInvmt = [](Investment* pInvest) {
 	printf("delete by delInvmt\n");
 	delete pInvest;
 };
@@ -34,7 +34,7 @@ auto delInvmt=[](Investment* pInvest){
 
 template<typename Ts>
 unique_ptr<Investment>
-makeInvestment(Ts params){
+makeInvestment(Ts params) {
 	return unique_ptr<Investment>(move(params));
 }
 
@@ -49,9 +49,20 @@ void UniqueTest(){
 	cout<<pInvestment->getX()<<endl;
 }
 
+void Consume(Investment&& invest) {
+    auto my_inv = move(invest);
+    cout << my_inv.getX() <<endl;
+}
+
+void moveTest() {
+    Investment m1(3), m2(4);
+    Consume(move(m1));
+    //Consume(m2);
+}
+
 int main(){
-	UniqueTest();
-	
+	//UniqueTest();
+	moveTest();
 	
 	return 0;
 } 
