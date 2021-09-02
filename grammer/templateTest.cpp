@@ -105,7 +105,19 @@ public:
 template<typename T> zhuanFunc(T a, int b) {
 	std::cout<<a + b<<std::endl;
 }
+
+void ftmp(int i) {
+	std::cout << "i is " << i << std::endl;
+}
+
+struct Bnew {
+	operator int() const {return 1;}
+};
+
 int main(){
+	Bnew bnew;
+	ftmp(bnew);
+	std::cout << "_______________________" << std::endl;
 	zhuanFunc('1', 1.2);
 	int a=2;
 	int b=3;
