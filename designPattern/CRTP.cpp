@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+ // CRTP是静态多态实现，效率比虚函数更高 
+
 template <typename Child>
 class Base {
 public:
@@ -51,6 +53,56 @@ template <typename Child>
 void destroy(Base<Child>* b) {
 	delete static_cast<Child*>(b);
 }
+
+template <typename D>
+class registry {
+public:
+	static size_t count;
+	static D* head; // 将泛型类型作为成员变量，所有类对象共享该类 
+	D* prev;
+	D* next;
+
+protected:
+	registry() {
+		++count;
+		prev = nullptr;
+		next = head;
+		head = static_cast<D*> (this);
+		if (next) next->prev = head;
+	}
+	
+	registry(const registry&) {
+		++count;
+		prev = nullptr;
+		next = head;
+		head = static_cast<D*> (this);
+		if (next) next->prev = head;
+	}
+	
+	~registry() {
+		--count;
+		if (prev) prev->next = next;
+		if (next) next->prev = prev;
+		if (head == this) head = next;
+	}
+};
+
+template <typename D>
+size_t registry<D>::count(0);
+template <typename D>
+D* registry<D>::head(nullptr);
+ 
+class testRig : public registry<testRig> {
+public:
+	testRig(int i) : _i(i) {}
+	friend std::ostream& operator << (std::ostream& out,
+	const testRig& t) {
+		out << c._i;
+		return out;	
+	}
+private:
+	int _i;
+};
 
 int main() {
 	Base<Child1> * c1 = new Child1();
